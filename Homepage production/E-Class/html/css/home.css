@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root
+{
+    --white: #fff;
+    --blue: #094b65;
+    --red: #f00;
+    --bkack: #000;
+    --black2: #7B7B7B;
+}
+body
+{
+    
+    overflow-x: hidden;
+    background: var(--white);
+    min-height: 100vh;
+}
+#header
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+#header .logo
+{
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+#header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+}
+#header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: var(--blue);
+    border-radius: 20px;
+}
+#header ul li a:hover/*,
+#header ul li a.active*/
+{
+    background: var(--blue);
+    color: var(--white);
+}
+/*상단 스크롤바*/
+.scrollindicator
+{
+    width: 100%;
+    height: 7px; /* height of progress bar */
+    display: block;
+    background: white;
+    left: 0;
+    top: 0; /* dock progress bar to bottom of page (change to "top" for top instead) */
+    cursor: pointer;
+    position: fixed;
+    z-index: 10000;
+    visibility: hidden;
+    -webkit-transition: height .2s ease;
+    transition: height .2s ease;
+}
+.scrollprogress
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    background: purple; /* background color of progress bar */
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+    =-webkit-transition: -webkit-transform .4s ease; 
+    transition: transform .4s ease; /* animate progress bar? Remove to disable */
+}
+/*상단 스크롤바 끝*/
+section
+{
+    margin-top: 100px;
+    position: relative;
+    width: 100%;
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+section::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--blue), transparent);
+    z-index: 10;
+}
+section #text
+{
+    position: absolute;
+    color: var(--blue);
+    font-size: 10vw;
+    text-align: center;
+    line-height: 0.55em;
+    font-family: 'Do Hyeon', sans-serif;
+    transform: translateY(-5%);
+}
+section #text span
+{
+    font-size: 0.20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-family: 'Do Hyeon', sans-serif;
+}
+#btn
+{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    background: var(--white);
+    color: var(--blue);
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translateY(100px);
+    transition: 0.5s;
+}
+#btn:hover
+{
+    background: var(--blue);
+    color: var(--white);
+    letter-spacing: 4px;
+}
+.sec
+{
+    position: relative;
+    padding: 100px;
+    background: var(--blue);
+}
+.sec h2
+{
+    font-size: 3.5em;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+.sec p
+{
+    font-size: 1em;
+    color: var(--white);
+}
+#m1
+{
+    font-size: 3.5em;
+    color: white;
+    text-align: center;
+}
+
+
+.main_div
+{
+    align-items: 50%;
+}
+.main_h1
+{
+    align-items: center;
+    color: aqua;
+    text-align: center;
+}
+
+
+
+/*사이드 바*/
+
+input[id="menuicon"]
+{
+    display:none;
+}
+input[id="menuicon"] + label
+{
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: fixed;
+    right:40px;
+    top:45px;
+    transition:all 0.35s;
+    cursor: pointer;
+    z-index: 10100;
+}
+input[id="menuicon"] + label span
+{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    border-radius: 30px; /*100%로 주게 되면 원이 된다.*/
+    background: var(--black2);
+    transition:all 0.35s;
+}
+input[id="menuicon"] + label span:nth-child(1)
+{
+    top:0;
+}
+input[id="menuicon"] + label span:nth-child(2)
+{
+    top: 50%;
+    transform:translateY(-50%);
+}
+input[id="menuicon"] + label span:nth-child(3)
+{
+    bottom:0;
+}
+
+input[id="menuicon"]:checked + label span:nth-child(1)
+{
+    top:50%;
+    transform:translateY(-50%) rotate(45deg); /*Y축을 이동 후 각도를 45만큼 시계방향으로 돌리기*/
+}
+input[id="menuicon"]:checked + label span:nth-child(2)
+{
+    opacity:0; /*투명도 설정 0-100*/
+}
+input[id="menuicon"]:checked + label span:nth-child(3)
+{
+    bottom: 50%;
+    transform:translateY(50%) rotate(-45deg);
+}
+input[id="menuicon"]:checked + label
+{
+    z-index: 10100;
+}
+
+div[class="sidebar"]
+{
+    width:300px;
+    height:100%;
+    background:#222;
+    position:fixed;
+    top:0;
+    right:-300px;
+    z-index: 10010;
+    transition:all 0.35s;
+    transition-delay: 0.2s;
+}
+input[id="menuicon"]:checked + label + .sidebar
+{
+    right:0;
+    transition-delay: 0s;
+}
+
+.background
+{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 100%;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(164, 164, 164, 0.5);
+    z-index: 10005;
+    transition: all 0.35s;
+    transition-delay: 0s;
+}
+input[id="menuicon"]:checked + label + .sidebar +.background
+{
+    left:0;
+    transition-delay: 0.2s;
+}
+input[id="menuicon"]:checked + label + .sidebar +.background > label
+{
+    height: 100%;
+    width: 100%;
+}
+
+#subname
+{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 15px;
+    height: 45px;
+    width: 200px;
+    background-color: var(--blue);
+    color: orange;
+    border-radius: 30px;
+}
+#subname > h3
+{
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 6px;
+}
+
+/*자소서 카드부분*/
+.main_card
+{
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 30vh;
+}
+.main_card_pm
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 30vh;
+}
+.main_card_pl
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 30vh;
+}
+.card_vertical
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.card_horizon
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+.card_pm
+{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-delay: 0.4s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.card_pm:hover
+{
+    width: 600px;
+    transition-delay: 0s;
+}
+.card_pm .circle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card_pm .circle::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr);
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+.card_pm:hover .circle::before
+{
+    clip-path: circle(400px at center);
+}
+.card_pm .circle .logo
+{
+    position: relative;
+    width: 185px;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+.card_pm:hover .circle .logo
+{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+.card_pm .content
+{
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+.card_pm:hover .content
+{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.content h2
+{
+    color: white;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+}
+.content p
+{
+    color: white;
+}
+.content a
+{
+    position: relative;
+    color: #111;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    font-weight: 500;
+}
+.card_pm .product_img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    height: 300px;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+.card_pm:hover .product_img
+{
+    left:72%;
+    transform: translate(-50%, -50%) scale(1);
+    transition-delay: 0.5s;
+}
+
+.card_pl
+{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-delay: 0.4s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.card_pl:hover
+{
+    width: 600px;
+    transition-delay: 0s;
+}
+.card_pl .circle /*하위선택자를 이렇게 선택 가능*/
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card_pl .circle::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr);
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+.card_pl:hover .circle::before
+{
+    clip-path: circle(400px at center);
+}
+.card_pl .circle .logo
+{
+    position: relative;
+    width: 185px;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+.card_pl:hover .circle .logo
+{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+.card_pl .content
+{
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+.card_pl:hover .content
+{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.content h2
+{
+    color: white;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+}
+.content p
+{
+    color: white;
+}
+.content a
+{
+    position: relative;
+    color: #111;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    font-weight: 500;
+}
+.card_pl .product_img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    height: 300px;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+.card_pl:hover .product_img
+{
+    left:72%;
+    transform: translate(-50%, -50%) scale(1);
+    transition-delay: 0.5s;
+}
+
+.card
+{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-delay: 0.4s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.card:hover
+{
+    width: 600px;
+    transition-delay: 0s;
+}
+.card .circle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .circle::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr);
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+.card:hover .circle::before
+{
+    clip-path: circle(400px at center);
+}
+.card .circle .logo
+{
+    position: relative;
+    width: 185px;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+.card:hover .circle .logo
+{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+.card .content
+{
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+.card:hover .content
+{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.content h2
+{
+    color: white;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+}
+.content p
+{
+    color: white;
+}
+.content a
+{
+    position: relative;
+    color: #111;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    font-weight: 500;
+}
+.card .product_img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    height: 300px;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+.card:hover .product_img
+{
+    left:72%;
+    transform: translate(-50%, -50%) scale(1);
+    transition-delay: 0.5s;
+}
+
+
+
+/*반응형*/
+@media (max-width: 991px)
+{
+    .card_pm
+    {
+        width:auto;
+        max-width: 350px;
+        align-items: flex-start;
+    }
+    .card_pm:hover
+    {
+        height: 600px;
+    }
+    .card_pm:hover .product_img
+    {
+        top: initial;
+        bottom: 30px;
+        left: 50%;
+        transform: translate(-50%, 0%) scale(1);
+        height: 300px;
+    }
+    .card_pm .content
+    {
+        width: 100%;
+        left: 0;
+        padding: 40px;
+    }
+
+    .card_pl
+    {
+        width:auto;
+        max-width: 350px;
+        align-items: flex-start;
+    }
+    .card_pl:hover
+    {
+        height: 600px;
+    }
+    .card_pl:hover .product_img
+    {
+        top: initial;
+        bottom: 30px;
+        left: 50%;
+        transform: translate(-50%, 0%) scale(1);
+        height: 300px;
+    }
+    .card_pl .content
+    {
+        width: 100%;
+        left: 0;
+        padding: 40px;
+    }
+
+    .card
+    {
+        width:auto;
+        max-width: 350px;
+        align-items: flex-start;
+    }
+    .card:hover
+    {
+        height: 600px;
+    }
+    .card:hover .product_img
+    {
+        top: initial;
+        bottom: 30px;
+        left: 50%;
+        transform: translate(-50%, 0%) scale(1);
+        height: 300px;
+    }
+    .card .content
+    {
+        width: 100%;
+        left: 0;
+        padding: 40px;
+    }
+}

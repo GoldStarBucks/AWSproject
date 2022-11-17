@@ -1,0 +1,103 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+.title {
+    width: 100px;
+    height: 25px;
+    background-color: #f5f3f0;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid #e7e7e7;
+}
+.ttitle {
+    width: 700px;
+    height: 25px;
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid #e7e7e7;
+}
+.ttitle input{
+    width: 700px;
+    height: 25px;
+    text-align: left;
+    outline: none;
+    border: none;
+}
+.ttitle textarea{
+    width: 700px;
+    text-align: left;
+    outline: none;
+    border: none;
+    resize: none;
+}
+.info {
+    height: 25px;
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid #e7e7e7;
+}
+.info a {
+    color: #333;
+    display: inline-block;
+    line-height: 1.4;
+    word-break: break-all;
+    vertical-align: middle;
+}
+.info a:hover {
+    text-decoration: underline;
+}
+.board {
+    width: 100%;
+    border: 1px solid #e7e7e7;
+}
+.container {
+    width:800px;
+}
+.container h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 auto;
+  }
+  .container th {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 auto;
+  }
+.ccontent {
+    width: 100%;
+    text-align: left;
+}
+.content {
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+}
+.write-btn button {
+    width: 80px;
+    height: 35px;
+    margin-top: 10px;
+    background: #f5f3f0;
+    border: 1px solid #888;
+    color: #333;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.write-btn button:hover, .write-btn button:focus {
+    background: #cbcac8;
+    border-color: #888;
+    color: #333;
+}
+#list {
+    float: left;
+}
+#delete {
+    float: right;
+}
+#modify {
+    float: right;
+    margin-right: 10px;
+}

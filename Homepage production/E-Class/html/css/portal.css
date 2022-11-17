@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.header
+{
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+}
+
+.menu_btn
+{
+    background-color: black;
+    margin-top: 30px;
+    color: silver;
+    height: 38px;
+    width: 91px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.menu_btn:hover
+{
+    color: orange;
+}
+.login_btn
+{   
+    position: absolute;
+    color: white;
+    background-color: #E57C36;
+    height: 30px;
+    width: 75px;
+    right: 20px;
+    top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login_btn:hover
+{
+    background-color: #F5690C;
+}
+
+#menu_under_bar
+{
+    width: 100%;
+    height: 10px;
+    background-color: orange;
+}
+.left
+{
+    margin-top: 10px;
+    position: absolute;
+    height: 90%;
+    width: 220px;
+    left: 20px;
+    background-color: white;
+}
+
+.search
+{
+    width: 85%;
+    height: 25px;
+    border: 1px solid silver;
+}
+
+.search_button
+{
+    height: 100%;
+    width: 20px;
+}
+
+#left_top
+{
+    display: flex;
+    background-color: orange;
+    
+}
+.side_menubar
+{   
+    background-color: white;
+    padding-left: 4px;
+    padding-top: 1px;
+    width: 50%;
+    height: 40px;
+    border: 1px solid silver;
+}
+.side_menubar2
+{
+    display: inline-block;
+    background-color: white;
+    margin-top: -20px;
+    height: 35px;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid silver;
+}
+#side_menu_scroll
+{
+    position: absolute;
+    overflow-y:scroll;
+    height: 90%;
+    width: 100%;
+}
+
+.side_menubar3
+{
+    display: inline-block;
+    background-color: #EF6A12;
+    height: 37px;
+    width: 100%;
+    cursor: pointer;
+    border: 0;
+}
+.side_menubar4
+{
+    background-color: #BD3E0C;
+    height: 35px;
+    width: 100%;
+    cursor: pointer;
+    border: 0;
+}
+
+.right
+{
+    margin-top: 10px;
+    position: absolute;
+    height: 80%;
+    width: 1900px;
+    left: 255px;
+    right: 10%;
+    background-color: #F2F2F2;
+    border-top: 1px solid silver;
+    border-right: 1px solid silver;
+}
+
+#banner_1-2
+{
+    background-color: white;
+    height: 35px;
+    width: 20px;
+}
+
+#banner_button1-2
+{
+    background-color: white;
+    height: 35px;
+    width: 140px;
+    border-top: 1px solid silver;
+    border-bottom: 0;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+}
+
+#top_1-2
+{
+    color: silver;
+    font-size: 15px;
+    background-color: white;
+    width: 100%;
+    border: 1px solid silver;
+}
+
+.main
+{
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+#background
+{
+    margin-left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border: 1px solid silver;
+    z-index: 20;
+}
+
+#main1
+{
+    margin-left: 10px;
+    height: 100%;
+    width: 90%;
+    background-color: white;
+}
+
+#main2
+{
+    display: flex;
+    position: absolute;
+    margin-left: 30px;
+    background-color: white;
+    height: 20px;
+    width: 90%;
+    font-size: 20px;
+}
+
+#main2 ion-icon
+{
+    margin-top: 5px;
+}
+
+#main3
+{
+    position: absolute;
+    width: 1750px;
+    font-size: 15px;
+    margin-top: 40px;
+    margin-left: 35px;
+    border-bottom: 2px solid silver;
+}
+
+.main4
+{
+    position: relative;
+    display: flex;
+    left: 40px;
+    top: 100px;
+}
+
+.info
+{
+    width: 90%;
+}
+
+.line1
+{
+    border-top: 1px solid silver;
+    display: flex;
+    width: 100%;
+}
+
+.std
+{
+    display: flex;
+    width: 200px;
+    height: 25px;
+}
+
+.std_id1
+{
+    background-color: #F2F2F2;
+    width: 90px;
+    height: 25px;
+}
+
+.std_id1-1
+{
+    margin-left: 5px;
+    width: 100px;
+    height: 20px;
+    background-color: #EBECED;
+    border: 1px solid silver;
+}
+
+.main4 img
+{
+    height: 100px;
+    width: 80px;
+}
+
+#std_phone_number
+{
+    display: flex;
+    width: 400px;
+    height: 25px;
+}
+
+#std_phone_number1
+{
+    margin-left: 5px;
+    width: 200px;
+    height: 20px;
+    background-color: #EBECED;
+    border: 1px solid silver;
+}
+
+#std_adress
+{
+    display: flex;
+    width: 1000px;
+    height: 25px;
+}
+
+#std_adress_info
+{
+    margin-left: 5px;
+    width: 900px;
+    height: 20px;
+    background-color: #EBECED;
+    border: 1px solid silver;
+}
+
+
+/* 성적조회 사이트 CSS */
+
+#a_subject
+{
+    position: absolute;
+    margin-top: 100px;
+    height: 300px;
+}
+
+#subject_table
+{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 25px;
+    height: 70px;
+    width: 160px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#subject_table th,
+#subject_table td
+{
+    border: 1px solid black;
+}
+
+#main3_grade
+{
+    position: absolute;
+    margin-top: 1000px;
+    margin-left: 0;
+    height: 100px;
+    width: 800px;
+}
+
+#main4_grade
+{
+    position: absolute;
+    display: flex;
+    left: 40px;
+    top: 100px;
+}
+
+#main4_grade p
+{
+    
+    margin: 20px 0 0 200px;
+}
+
+#grade
+{
+    position: absolute;
+    margin: 50px 0 0 200px;
+    width: 1000px;
+    height: 600px;
+}
+
+#grade th,
+#grade td
+{
+    border: 1px solid black;
+    text-align: center;
+}
+
+#grade_table
+{
+    margin: 0;
+}

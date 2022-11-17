@@ -1,0 +1,45 @@
+
+
+docker exec CONTAINER_ID ip addr show eth0
+
+6498579a69862fc8ca9417221fdac53f6e630d9d4f8af631222cafbbc775bcd7
+
+docker exec 6498579a69862fc8ca9417221fdac53f6e630d9d4f8af631222cafbbc775bcd7 ip addr show eth0
+
+
+FROM	ubuntu:16.04
+RUN	apt update
+RUN	apt install net-tools openssh-server vim -y
+RUN	mkdir /var/run/sshd
+RUN	echo 'root:root' |chpasswd
+RUN	sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+RUN	mkdir /root/.ssh
+EXPOSE	22
+CMD	["/usr/sbin/sshd", "-D"]
+
+
+
+
+FROM	ubuntu:20.04
+
+RUN	apt-get update
+
+ARG	DEBIAN_FRONTEND=noninteractive
+ENV	TZ=Asia/Seoul
+RUN	apt-get install -y tzdata
+
+RUN	apt-get install -y apache2 php sqlite3
+RUN	apt-get install -y php-sqlite3
+
+RUN	apt install net-tools openssh-server vim -y
+RUN	mkdir /var/run/sshd
+RUN	echo 'root:root' | chpasswd
+RUN	sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+RUN	mkdir /root/.ssh
+
+EXPOSE	22
+EXPOSE	80
+
+CMD	["/usr/sbin/sshd", "-D"]

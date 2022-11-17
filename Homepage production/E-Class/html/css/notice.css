@@ -1,0 +1,111 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  .page-title {
+    margin-bottom: 10px;
+  }
+  .page-title h3 {
+    font-size: 30px;
+    color: #333333;
+    font-weight: 600;
+    text-align: left;
+    padding: 5px;
+  }
+  
+  .board-table {
+    font-size: 13px;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .board-table a {
+    color: #333;
+    display: inline-block;
+    line-height: 1.4;
+    word-break: break-all;
+    vertical-align: middle;
+  }
+  .board-table a:hover {
+    text-decoration: underline;
+  }
+  .board-table th {
+    background-color: #f5f3f0;
+    text-align: center;
+  }
+  
+  .board-table .th-num {
+    width: 100px;
+    text-align: center;
+  }
+  
+  .board-table .th-date {
+    width: 200px;
+  }
+  
+  .board-table th, .board-table td {
+    padding: 14px 0;
+  }
+  
+  .board-table tbody td {
+    border-top: 1px solid #e7e7e7;
+    text-align: center;
+  }
+  
+  .board-table tbody th {
+    padding-left: 28px;
+    padding-right: 14px;
+    border-top: 1px solid #e7e7e7;
+    text-align: left;
+  }
+  
+  .board-table tbody th p{
+    display: none;
+  }
+  
+  .write-btn button {
+    width: 80px;
+    height: 35px;
+    margin-top: 10px;
+    background: #f5f3f0;
+    border: 1px solid #888;
+    color: #333;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+    float: right;
+  }
+  .write-btn button:hover, .write-btn button:focus {
+    background: #cbcac8;
+    border-color: #888;
+    color: #333;
+  }
+  
+  /* reset */
+  
+  * {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .container {
+    width: 800px;
+    margin: 0 auto;
+  }
+  .blind {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+  }
+  

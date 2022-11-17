@@ -1,0 +1,34 @@
+1. 방화벽 끄기
+systemctl stop firewalld
+
+2. Samba 설치
+
+yum update
+
+yum install samba
+
+nano /etc/samba/smb.conf
+*추가*
+####### Authentication #######
+security = user
+
+useradd itnrsmb
+id itnrsmb
+smbpasswd -a itnrsmb
+
+nano /etc/samba/smb.conf
+*추가*
+[share]
+	comment = share directory
+	path = /home/download
+	writable = yes
+	valid users = itnrsmb
+	browseable = yes
+
+mkdir /home/download
+service smb restart
+
+systemctl status smb
+
+id : itnrsmb
+pw : dnsdud00!

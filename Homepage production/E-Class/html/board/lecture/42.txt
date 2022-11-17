@@ -1,0 +1,15 @@
+CREATE TABLE "challenge" ("num" integer not null primary key autoincrement, "title" text not null, "desc" text not null, "os" text not null, "score" integer not null)
+
+create table "branch" ("num" integer not null primary key autoincrement, "chall_num" integer not null, "seq" integer not null);
+
+create table "ability" ("num" integer not null primary key autoincrement, "abil_name" text not null, "payload" text not null, "branch_num" integer not null, "seq" integer not null);
+
+
+CREATE TABLE "branches" (
+        "ch_num"        INTEGER NOT NULL,
+        "branch_num"    INTEGER NOT NULL,
+        "seq"   INTEGER NOT NULL,
+        "payload"       INTEGER NOT NULL,
+        "abilityname"   INTEGER NOT NULL,
+        FOREIGN KEY("ch_num") REFERENCES "challenges"("num")
+)
