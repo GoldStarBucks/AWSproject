@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #dde1e7;
+}
+.authform {
+    text-align: center;
+    margin-bottom: 50px;
+    background-color: #ffffff;
+    box-shadow: 0px 7px 10px 3px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+.auth-form h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+.select {
+  padding: 15px 10px;
+}
+.select input[type=radio]{
+  display: none;
+}
+.select input[type=radio]+label{
+  display: inline-block;
+  cursor: pointer;
+  height: 24px;
+  width: 90px;
+  border: 1px solid #de5b04;
+  line-height: 24px;
+  text-align: center;
+  font-weight:bold;
+  font-size:13px;
+  border-radius: 5px;
+}
+.select input[type=radio]+label{
+  background-color: #fff;
+  color: #333;
+  border-radius: 5px;
+}
+.select input[type=radio]:checked+label{
+  background-color: #de5b04;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.int-area {
+  width: 350px;
+  position: relative;
+  padding: 20px;
+}
+
+.int-area:first-child {
+  margin-top: 0;
+}
+
+.int-area input {
+  width: 75%;
+  padding: 5px 15px 5px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 18px;
+  outline: none;
+}
+
+.int-area label {
+  position: absolute;
+  left: 50px;
+  top: 10px;
+  font-size: 18px;
+  transition: top 0.5s ease;
+}
+
+.int-area label.warning {
+  color: red !important;
+  animation: warning 0.3s ease;
+  animation-iteration-count: 3;
+}
+.int-area input[type='date'] {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: black;
+  width: 75%;
+}
+
+@keyframes warning {
+  0% {
+    transform: translateX(-8px);
+  }
+  25% {
+    transform: translateX(8px);
+  }
+  50% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+.int-area input:focus + label,
+.int-area input:valid + label {
+  top: -2px;
+  font-size: 13px;
+  color: #de5b04;
+}
+.int-area input:read-only,
+.int-area input:focus,
+.int-area input:valid {
+  border-bottom: 1px solid #de5b04;
+}
+
+.btn-area {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.btn-area button {
+  width: 50%;
+  height: 40px;
+  margin-bottom: 20px;
+  color: #fff;
+  background: #de5b04;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.caption {
+  margin-top: 20px;
+  text-align: center;
+}
+.btn-area a {
+  background-color: #eee;
+  padding: 7px 20px 7px 20px;
+  border-radius: 5px;
+  line-height: 24px;
+  color: #333;
+  text-decoration: none;
+  font-size:13px;
+}
